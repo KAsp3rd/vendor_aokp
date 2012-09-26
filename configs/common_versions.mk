@@ -14,7 +14,7 @@ else
      PRODUCT_PROPERTY_OVERRIDES += \
          ro.goo.developerid=KAsp3rd \
          ro.goo.rom=aokp \
-         ro.goo.version=$(DATE)
+         ro.goo.version=$(DATE) \
             ro.aokp.version=$(TARGET_PRODUCT)_nightly_$(DATE)
 
 endif
