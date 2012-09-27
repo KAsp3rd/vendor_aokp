@@ -15,7 +15,7 @@ else
          ro.goo.developerid=KAsp3rd \
          ro.goo.rom=aokp \
          ro.goo.version=$(DATE) \
-            ro.aokp.version=$(TARGET_PRODUCT)_nightly_$(DATE)
+            ro.aokp.version=$(TARGET_PRODUCT)_$(DATE)
 
 endif
 
