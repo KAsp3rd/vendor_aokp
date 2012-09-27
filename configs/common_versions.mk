@@ -1,6 +1,7 @@
 # Version information used on all builds
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_UTC_DATE=$(shell date +"%s")
 
+GDATE= $(shell date +"%Y%m%d")
 DATE = $(shell vendor/aokp/tools/getdate)
 
 ifneq ($(AOKP_BUILD),)
@@ -14,7 +15,7 @@ else
      PRODUCT_PROPERTY_OVERRIDES += \
          ro.goo.developerid=KAsp3rd \
          ro.goo.rom=aokp \
-         ro.goo.version=$(DATE) \
+         ro.goo.version=$(GDATE) \
             ro.aokp.version=$(TARGET_PRODUCT)_$(DATE)
 
 endif
