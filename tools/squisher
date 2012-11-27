@@ -184,6 +184,7 @@ echo
 img=`basename $OUTFILE`
 cd `dirname $OUTFILE`
 $MD5 $img >$img.md5sum
+OUTFILE=`du -sh $OUTFILE | egrep '^[0-9]+(,[0-9]+)*M.*$'`
 echo
 echo $CL_CYN"Package complete:"$CL_MAG" $OUTFILE"$CL_RST
 cat $img.md5sum
@@ -191,3 +192,4 @@ echo
 )
 
 exit 0
+
