@@ -1,8 +1,11 @@
 # Inherit AOSP device configuration for mako
 $(call inherit-product, device/samsung/manta/full_manta.mk)
 
-# Inherit AOKP common bits
-$(call inherit-product, vendor/aokp/configs/common.mk)
+# Inherit AOKP common_tablet bits
+$(call inherit-product, vendor/aokp/configs/common_tablet.mk)
+
+# Manta Overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/manta
 
 # Setup device specific product configuration
 PRODUCT_NAME := aokp_manta

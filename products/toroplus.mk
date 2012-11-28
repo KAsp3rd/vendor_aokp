@@ -4,6 +4,9 @@ $(call inherit-product, device/samsung/toroplus/full_toroplus.mk)
 # Inherit AOKP common bits
 $(call inherit-product, vendor/aokp/configs/common.mk)
 
+# Tuna Overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/tuna
+
 # Setup device specific product configuration.
 PRODUCT_NAME := aokp_toroplus
 PRODUCT_BRAND := Google
@@ -12,9 +15,6 @@ PRODUCT_MODEL := Galaxy Nexus
 PRODUCT_MANUFACTURER := Samsung
 
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=mysidspr BUILD_FINGERPRINT=samsung/mysidspr/toroplus:4.0.4/IMM76I/330937:user/release-keys PRIVATE_BUILD_DESC="mysidspr-user 4.0.4 IMM76I 330937 release-keys" BUILD_NUMBER=330937
-
-PRODUCT_COPY_FILES += \
-    vendor/aokp/prebuilt/tuna/vold.fstab:system/etc/vold.fstab
 
 # Torospr specific packages
 PRODUCT_PACKAGES += \
