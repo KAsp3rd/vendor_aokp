@@ -24,7 +24,7 @@ else
         ro.goo.developerid=KAsp3rd \
         ro.goo.rom=aokp_mr1_testing \
         ro.goo.version=0 \
-            ro.aokp.version=$(TARGET_PRODUCT)_jb-mr1_test
+            ro.aokp.version=$(TARGET_PRODUCT)_jb-mr1_test_$(DATE)
 endif
 
 
