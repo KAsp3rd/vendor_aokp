@@ -11,9 +11,16 @@ ifneq ($(AOKP_BUILD),)
         ro.goo.rom=aokp \
         ro.goo.version=$(shell echo $(AOKP_BUILD) | cut -d/ -f1) \
         ro.aokp.version=$(TARGET_PRODUCT)_jb-mr1_$(shell echo $(AOKP_BUILD) | cut -d/ -f2)
-endif
-
-ifneq ($(MY_BUILD),)
+else
+    ifneq ($(AOKP_NIGHTLY),)
+        # AOKP_NIGHTLY=true
+        PRODUCT_PROPERTY_OVERRIDES += \
+            ro.goo.developerid=KAsp3rd \
+            ro.goo.rom=aokp \
+            ro.goo.version=$(GDATE) \
+                ro.aokp.version=$(TARGET_PRODUCT)_nightly_$(DATE)
+else
+    ifneq ($(MY_BUILD),)
         PRODUCT_PROPERTY_OVERRIDES += \
 	    ro.goo.developerid=KAsp3rd \
 	    ro.goo.rom=aokp \
@@ -25,6 +32,9 @@ else
         ro.goo.rom=aokp_mr1_testing \
         ro.goo.version=0 \
             ro.aokp.version=$(TARGET_PRODUCT)_jb-mr1_test_$(DATE)
+
+        endif
+    endif
 endif
 
 
